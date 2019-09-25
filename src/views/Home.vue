@@ -19,7 +19,14 @@
         </router-link>
       </div>
     </div>
-    <div><router-link to="/import/csv"></router-link></div>
+    <div class="columns">
+      <div class="column">
+        <router-link to="/import/csv/adult">おとな編CSVデータ読み込み</router-link>
+      </div>
+      <div class="column">
+        <router-link to="/import/csv/children">こども編CSVデータ読み込み</router-link>
+      </div>
+      </div>
   </div>
 </template>
 

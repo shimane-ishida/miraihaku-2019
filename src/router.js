@@ -39,7 +39,7 @@ export default new Router({
       component: ChildrenAnq
     },
     {
-      path: '/import/csv',
+      path: '/import/csv/:q',
       name: 'import',
       component: Import
     }
