@@ -5,14 +5,14 @@
     </div>
     <div class="columns">
       <div class="column">
-        <router-link to="/adult/q/1">
+        <router-link to="/adult/1">
           <div class="card column-h has-background-info">
             <p class="center-p">おとな編</p>
           </div>
         </router-link>
       </div>
       <div class="column">
-        <router-link to="/children/q/1">
+        <router-link to="/children/1">
           <div class="card column-h has-background-danger">
             <p class="center-p">こども編</p>
           </div>

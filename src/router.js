@@ -1,10 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import Adult from './views/Adult.vue'
-import AdultAnq from './views/AdultAnq.vue'
-import Children from './views/Children.vue'
-import ChildrenAnq from './views/ChildrenAnq.vue'
+import Quiz from './views/Quiz.vue'
+import QuizAnq from './views/QuizAnq.vue'
 import Import from './views/Import.vue'
 
 Vue.use(Router)
@@ -19,24 +17,26 @@ export default new Router({
       component: Home
     },
     {
-      path: '/adult/q/:q',
+      path: '/:mode/:q',
       name: 'adult',
-      component: Adult
+      component: Quiz,
+      children: [
+        {
+          path: '/a',
+          component: QuizAnq
+        },
+      ]
     },
     {
-      path: '/adult/a/:q',
-      name: 'adultAnq',
-      component: AdultAnq
-    },
-    {
-      path: '/children/q/:q',
+      path: '/:mode/:q',
       name: 'children',
-      component: Children
-    },
-    {
-      path: '/children/a/:q',
-      name: 'childrenAnq',
-      component: ChildrenAnq
+      component: Quiz,
+      children: [
+        {
+          path: '/a',
+          component: QuizAnq
+        },
+      ]
     },
     {
       path: '/import/csv/:q',
