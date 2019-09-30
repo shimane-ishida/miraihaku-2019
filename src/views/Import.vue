@@ -8,7 +8,7 @@
           ※注意：既に読み込んだデータがある場合データを上書きします。
         </p>
         <div>
-          <a href="/" class="button is-info">戻る</a>
+          <router-link to="/"><a class="button is-info">戻る</a></router-link>
         </div>
         <table class="table is-fullwidth">
           <thead>

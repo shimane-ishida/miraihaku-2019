@@ -19,10 +19,10 @@ export default new Vuex.Store({
       //初期化
       state.count = 0
       state.AdultQuizs.forEach(e => {
-        e.done = true
+        e.done = false
       });
       state.ChildrenQuizs.forEach(e => {
-        e.done = true
+        e.done = false
       });
     },
     setQuizs(state, data){
@@ -36,11 +36,17 @@ export default new Vuex.Store({
   getters: {
     doneAdultQuizs: state => {
       //未回答クイズの取得
-      return state.AdultQuizs.filter(quiz => !quiz.done)
+      const quiz = state.AdultQuizs.filter(quiz => !quiz.done)
+      const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+      console.log(randRange(0,quiz.length-1));
+      
+      return quiz[randRange(0,quiz.length-1)]
     },
     doneChildrenQuizs: state => {
       //未回答クイズの取得
-      return state.ChildrenQuizs.filter(quiz => !quiz.done)
+      const quiz = state.ChildrenQuizs.filter(quiz => !quiz.done)
+      const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+      return quiz[randRange(0,quiz.length)]
     }
   },
   plugins: [createPersistedState({
