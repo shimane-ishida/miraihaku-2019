@@ -9,10 +9,14 @@
             </div>
             <div class="columns">
               <div class="column">
-                <img src="/static/{{ quiz.ans1 }}" alt="回答画像１" @click="ansFunc(1)">
+                <figure class="image is-16by9">
+                  <img src="/static/{{ quiz.ans1 }}" alt="回答画像１" @click="ansFunc(1)">
+                </figure>
               </div>
               <div class="column">
-                <img src="/static/{{ quiz.ans2 }}" alt="回答画像２" @click="ansFunc(2)">
+                <figure class="image is-16by9">
+                  <img src="/static/{{ quiz.ans2 }}" alt="回答画像２" @click="ansFunc(2)">
+                </figure>
               </div>
             </div>
           <!-- 10問回答するまで表示 -->
