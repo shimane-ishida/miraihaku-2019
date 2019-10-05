@@ -8,6 +8,7 @@ RUN yum -y install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 
 # apache その他 phpパッケージを導入
 RUN yum -y install httpd
+RUN yum -y install iproute
 
 
 CMD ["/usr/sbin/httpd","-D","FOREGROUND"]
