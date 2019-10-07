@@ -60,13 +60,14 @@ export default {
 
       const loadFunc = () => {
         const lines = reader.result.split("\n")
-        let index = 1
+        let index = 0
         lines.forEach(element => {
           const workerData = element.split(",")
           if(workerData.length == 1) return
           //1行目はヘッダなので飛ばす
-          if(index != 1) {
+          if(index != 0) {
             const worker = {
+              index: index -1,
               no: workerData[0],
               q: workerData[1],
               ans1: workerData[2],
@@ -74,6 +75,7 @@ export default {
               ans: workerData[4],
               ans_img: workerData[5],
               done: false,
+              seikai: false,
             }
             workers.push(worker)
           }
@@ -84,6 +86,7 @@ export default {
           mode: this.$route.params.q,
           quiz: workers
         }
+        console.log(data)
         this.$store.commit('setQuizs',data)
       };
       reader.onload = loadFunc

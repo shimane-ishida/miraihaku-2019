@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Quiz from './views/Quiz.vue'
 import QuizAnq from './views/QuizAnq.vue'
 import Import from './views/Import.vue'
+import QuizEnd from './views/QuizEnd.vue'
 
 Vue.use(Router)
 
@@ -18,7 +19,7 @@ const router = new Router({
     {
       name: 'home',
       path: '/',
-      component: Home
+      component: Home,
     },
     {
       name: 'quiz',
@@ -27,13 +28,18 @@ const router = new Router({
     },
     {
       name: 'anq',
-      path: '/:mode/a',
-      component: QuizAnq
+      path: '/:mode/:q/:index/:ans',
+      component: QuizAnq,
+    },
+    {
+      name: 'end',
+      path: '/:mode/end',
+      component: QuizEnd,
     },
     {
       path: '/import/csv/:q',
       name: 'import',
-      component: Import
+      component: Import,
     }
   ]
 })

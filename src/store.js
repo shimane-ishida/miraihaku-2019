@@ -38,8 +38,6 @@ export default new Vuex.Store({
       //未回答クイズの取得
       const quiz = state.AdultQuizs.filter(quiz => !quiz.done)
       const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
-      console.log(randRange(0,quiz.length-1));
-      
       return quiz[randRange(0,quiz.length-1)]
     },
     doneChildrenQuizs: state => {
@@ -47,6 +45,16 @@ export default new Vuex.Store({
       const quiz = state.ChildrenQuizs.filter(quiz => !quiz.done)
       const randRange = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
       return quiz[randRange(0,quiz.length)]
+    },
+    getAdultQuizByIndex: state => (index) => {
+      let res = state.AdultQuizs.find(quiz => quiz.index === index)
+      res.done = true
+      return res
+    },
+    getChildrenQuizByIndex: state => (index) => {
+      let res = state.ChildrenQuizs.find(quiz => quiz.index === index)
+      res.done = true
+      return res
     }
   },
   plugins: [createPersistedState({
