@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="is-size-1">{{ title }}</h1>
     <img :src="'/static/' + quiz.ans_img" alt="正解画像">
-    <div v-if="this.$route.params.q != 3">
+    <div v-if="this.$route.params.q != 7">
       <router-link :to="{name:'quiz' ,params: {mode: this.$route.params.mode, q: Number(this.$route.params.q) + 1}}">Next</router-link>
     </div>
     <div v-else>
