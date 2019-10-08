@@ -5,7 +5,7 @@
       <div class="box">
         <h2 class="is-size-2">最 終 結 果</h2>
         <br>
-        <p class="is-size-2">あなたの最終正解数は...</p>
+        <p class="is-size-2">あなたの正解数は...</p>
         <p class="is-size-1">{{ count }}問でした！</p>
       </div>
       <div v-if="isStop">
