@@ -4,8 +4,8 @@
       <div class="container">
         <overlay :title="title" :show="isShow" :text="text" />
         <div class="box">
-          <h1 class="is-size-2 ">問題 {{ this.$route.params.q}}.</h1>
-          <p class="is-size-3">{{ quiz.q }}</p>
+          <h1 class="is-size-3 ">問題 {{ this.$route.params.q}}.</h1>
+          <p class="is-size-4">{{ quiz.q }}</p>
         </div>
         <div class="columns">
           <div class="column">
