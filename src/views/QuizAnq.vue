@@ -1,24 +1,23 @@
 <template>
-  <section class="section">
-    <div class="container">
-      <div class="box">
-        <h1 class="is-size-1">{{ title }}</h1>
-      </div>
-      <div v-if="this.$route.params.q != 10">
-        <router-link :to="{name:'quiz' ,params: {mode: this.$route.params.mode, q: Number(this.$route.params.q) + 1}}">Next</router-link>
-      </div>
-      <div v-else>
-        <router-link :to="{name:'end', params: {mode: this.$route.params.mode,}}">最終結果表示</router-link>
-      </div>
+  <div class="container">
+    <h1 class="is-size-1">{{ title }}</h1>
+    <div class="box">
+      <img :src="'/static/' + quiz.ans_img" alt="正解画像">
     </div>
-  </section>
+    <div v-if="this.$route.params.q != 3">
+      <router-link :to="{name:'quiz' ,params: {mode: this.$route.params.mode, q: Number(this.$route.params.q) + 1}}">Next</router-link>
+    </div>
+    <div v-else>
+      <router-link :to="{name:'end', params: {mode: this.$route.params.mode,}}">最終結果表示</router-link>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
   data: function(){
     return {
-      title: '残念。。不正解',
+      title: '残念、不正解。正解は、、、',
       quiz:{},
     }
   },

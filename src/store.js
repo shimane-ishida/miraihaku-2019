@@ -55,6 +55,9 @@ export default new Vuex.Store({
       let res = state.ChildrenQuizs.find(quiz => quiz.index === index)
       res.done = true
       return res
+    },
+    getCount: state => {
+      return state.count
     }
   },
   plugins: [createPersistedState({
