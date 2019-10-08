@@ -1,26 +1,24 @@
 <template>
   <div>
-    <section class="section">
-      <div class="container">
-        <overlay :title="title" :show="isShow" :text="text" />
-        <div class="box">
-          <h1 class="is-size-3 ">問題 {{ this.$route.params.q}}.</h1>
-          <p class="is-size-4">{{ quiz.q }}</p>
+    <div class="container">
+      <overlay :title="title" :show="isShow" :text="text" />
+      <div class="box">
+        <h1 class="is-size-3 ">問題 {{ this.$route.params.q}}.</h1>
+        <p class="is-size-4">{{ quiz.q }}</p>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <router-link :to="{name:'anq' ,params: {mode: this.$route.params.mode, q: Number(this.$route.params.q), index: quiz.index, ans: '1'}}">
+            <a><img :src="'/static/' + quiz.ans1" alt="回答画像１"></a>
+          </router-link>
         </div>
-        <div class="columns">
-          <div class="column">
-            <router-link :to="{name:'anq' ,params: {mode: this.$route.params.mode, q: Number(this.$route.params.q), index: quiz.index, ans: '1'}}">
-              <a><img :src="'/static/' + quiz.ans1" alt="回答画像１"></a>
-            </router-link>
-          </div>
-          <div class="column">
-            <router-link :to="{name:'anq' ,params: {mode: this.$route.params.mode, q: Number(this.$route.params.q), index: quiz.index, ans: '2' }}">
-              <a><img :src="'/static/' + quiz.ans2" alt="回答画像１"></a>
-            </router-link>
-          </div>
+        <div class="column">
+          <router-link :to="{name:'anq' ,params: {mode: this.$route.params.mode, q: Number(this.$route.params.q), index: quiz.index, ans: '2' }}">
+            <a><img :src="'/static/' + quiz.ans2" alt="回答画像１"></a>
+          </router-link>
         </div>
       </div>
-    </section>
+    </div>
   </div>
 </template>
 
