@@ -49,3 +49,10 @@ export default {
   },
 }
 </script>
+
+<style scope>
+  .container{
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+</style>

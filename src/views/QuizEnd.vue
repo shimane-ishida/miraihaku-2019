@@ -4,7 +4,9 @@
       <!-- 最終結果 -->
       <div class="box">
         <h2 class="is-size-2">最 終 結 果</h2>
-        <p class="is-size-1">{{ count }}</p>
+        <br>
+        <p class="is-size-2">あなたの最終正解数は...</p>
+        <p class="is-size-1">{{ count }}問でした！</p>
       </div>
       <div v-if="isStop">
         <router-link to="/">トップへ戻る</router-link>

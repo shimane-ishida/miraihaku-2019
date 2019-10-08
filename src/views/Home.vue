@@ -35,10 +35,14 @@
     </div>
     <div class="columns">
       <div class="column">
-        <router-link to="/import/csv/adult">おとな編CSVデータ読み込み</router-link>
+        <div v-if="!isClickA">
+          <router-link to="/import/csv/adult">おとな編CSVデータ読み込み</router-link>
+        </div>
       </div>
       <div class="column">
-        <router-link to="/import/csv/children">こども編CSVデータ読み込み</router-link>
+        <div v-if="!isClickC">
+          <router-link to="/import/csv/children">こども編CSVデータ読み込み</router-link>
+        </div>
       </div>
       </div>
   </div>
@@ -67,7 +71,7 @@ export default {
 
 <style scope>
   .title {
-    font-size: 8rem;
+    font-size: 7.5rem;
   }
   .column-h{
     height: calc(100vh - 260px);
@@ -80,6 +84,6 @@ export default {
     -webkit-transform : translate(-50%,-50%);
     transform : translate(-50%,-50%);
     text-align: center;/*一応BOX内の文字も中央寄せ*/
-    font-size: 5rem;
+    font-size: 4rem;
   }
 </style>

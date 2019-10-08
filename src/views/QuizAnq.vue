@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <h1 class="is-size-1">{{ title }}</h1>
-    <div class="box">
-      <img :src="'/static/' + quiz.ans_img" alt="正解画像">
-    </div>
+    <img :src="'/static/' + quiz.ans_img" alt="正解画像">
     <div v-if="this.$route.params.q != 3">
       <router-link :to="{name:'quiz' ,params: {mode: this.$route.params.mode, q: Number(this.$route.params.q) + 1}}">Next</router-link>
     </div>
@@ -35,3 +33,10 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+  img {
+    width: 600px;
+    height: 450px;
+  }
+</style>
