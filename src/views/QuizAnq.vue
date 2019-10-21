@@ -18,6 +18,8 @@ export default {
     }else if(this.$route.params.mode == "children"){
       this.quiz = this.$store.getters.getChildrenQuizByIndex(this.$route.params.index)
     }
+    console.log(this.quiz);
+    
     if(Number(this.quiz.ans) === Number(this.$route.params.ans)){
       this.title = 'お見事！正解です！'
       //正解数のカウント
