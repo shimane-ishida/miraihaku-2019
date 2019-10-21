@@ -9,6 +9,15 @@
         <p class="is-size-1">{{ count }}問でした！</p>
       </div>
       <div v-if="isStop">
+        <div v-if="count == 10">
+          <img src="/static/kekka10.jpg" alt="全問正解！">
+        </div>
+        <div v-else-if="count > 7">
+          <img src="/static/kekka7-9.jpg" alt="惜しい！">
+        </div>
+        <div v-else>
+          <img src="/static/kekka0-6.jpg" alt="もう少し頑張ろう！">
+        </div>
         <router-link to="/">トップへ戻る</router-link>
       </div>
     </div>
@@ -45,3 +54,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  img {
+    width: 60%;
+    height: 60%;
+  }
+</style>
